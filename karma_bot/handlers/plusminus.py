@@ -18,7 +18,8 @@ async def cmd_plus(message: types.Message):
             await message.reply("Нельзя себе прибавить карму!")
         else:
             await karma_service.increment_karma(reply_user.id)
-            logging.info(f"+1 to {reply_user.username}")
+            logging.info(f"+1 to {reply_user.username}. "
+                         f"Current: {await karma_service.get_karma(reply_user.id)}")
 
 
 @dp.message_handler(Text(equals=["-"]))
@@ -33,4 +34,5 @@ async def cmd_minus(message: types.Message):
             await message.reply("Нельзя себе убавить карму!")
         else:
             await karma_service.decrement_karma(reply_user.id)
-            logging.info(f"-1 to {reply_user.username}")
+            logging.info(f"-1 to {reply_user.username}. "
+                         f"Current: {await karma_service.get_karma(reply_user.id)}")
