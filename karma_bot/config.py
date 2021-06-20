@@ -1,10 +1,6 @@
 import logging
 from os import getenv
 
-from dotenv import load_dotenv
-
-
-load_dotenv("../.env")
 
 # Webhook
 # WEBHOOK_URL = getenv("WEBHOOK_URL")
