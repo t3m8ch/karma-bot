@@ -2,7 +2,7 @@ import logging
 
 from aiogram.utils import executor
 
-from config import LOGGING_LEVEL, LOGGING_FORMAT
+from karma_bot.config import LOGGING_LEVEL, LOGGING_FORMAT
 from karma_bot.loader import dp, event_loop
 
 import karma_bot.handlers  # Don't delete this!
