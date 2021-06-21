@@ -35,5 +35,4 @@ class MemoryKarmaService(BaseKarmaService):
         if telegram_id in self._users.keys():
             return self._users[telegram_id]
         else:
-            self._users[telegram_id] = 0
             return 0
