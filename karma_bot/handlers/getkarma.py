@@ -5,8 +5,9 @@ from karma_bot.loader import dp, karma_service
 
 
 @dp.message_handler(lambda m: len(m.text.split()) == 2, commands=["karma"])
-@dp.message_handler(lambda m: len(m.text.split()) == 2,
-                    Text(contains=["karma", "карма"]))
+@dp.message_handler(lambda m: len(m.text.split()) == 2 and (
+                              "карма" in m.text or
+                              "karma" in m.text))
 async def cmd_karma_of_user(message: types.Message):
     user_info = message.text.split()[1]
     if "@" in user_info:
